@@ -3,7 +3,6 @@
 source init_envs
 source stack_envs
 
-
 echo "Using infrastructure from existing EKS stack:"
 echo "EKS Cluster Name: $EKS_CLUSTER_NAME"
 echo "VPC ID: $VPC_ID"

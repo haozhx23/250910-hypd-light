@@ -18,13 +18,6 @@ helm repo add eks https://aws.github.io/eks-charts
 ## Make sure you update to the latest version
 helm repo update eks
 
-# helm repo add kuberay https://ray-project.github.io/kuberay-helm/
-# helm repo update
-
-# helm install kuberay-operator kuberay/kuberay-operator --version 1.2.0 --namespace kube-system
-
-# helm ls -n kube-system
-
 # 检查并下载 SageMaker HyperPod CLI 仓库
 if [ ! -d "./sagemaker-hyperpod-cli" ]; then
     echo "Cloning SageMaker HyperPod CLI repository..."
@@ -33,9 +26,8 @@ else
     echo "SageMaker HyperPod CLI repository already exists, skipping clone..."
 fi
 
-# cd /home/ubuntu/workspace/HyperPod-InstantStart-BASE/cli-min/sagemaker-hyperpod-cli/helm_chart/HyperPodHelmChart && helm dependency build
-
 kubectl create namespace aws-hyperpod
+kubectl create namespace kubeflow
 
 helm dependency build sagemaker-hyperpod-cli/helm_chart/HyperPodHelmChart
 
